@@ -13,6 +13,15 @@ class CreateOrder extends Migration
     public function up()
     {
         //
+        Schema::create('orders',function(Blueprint $table){
+            $table->integer('id');
+            $table->integer('user_id');
+            $table->integer('customer_id');
+            $table->integer('table_id');
+            $table->date('order_date');
+            $table->float('discount');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,5 +32,6 @@ class CreateOrder extends Migration
     public function down()
     {
         //
+        Schema::drop('orders');
     }
 }

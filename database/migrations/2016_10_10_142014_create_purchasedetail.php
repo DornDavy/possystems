@@ -13,6 +13,16 @@ class CreatePurchasedetail extends Migration
     public function up()
     {
         //
+        Schema::create('purchase_details', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('purchase_id');
+            $table->integer('item_id');
+            $table->integer('qty');
+            $table->float('price');
+            $table->date('expire');
+            $table->float('total');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,5 +33,6 @@ class CreatePurchasedetail extends Migration
     public function down()
     {
         //
+        Schema::drop('purchase_details');
     }
 }

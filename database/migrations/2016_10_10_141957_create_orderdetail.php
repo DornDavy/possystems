@@ -13,6 +13,15 @@ class CreateOrderdetail extends Migration
     public function up()
     {
         //
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('order_id');
+            $table->integer('item_id');
+            $table->integer('qty');
+            $table->integer('price');
+            $table->integer('total');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,5 +32,6 @@ class CreateOrderdetail extends Migration
     public function down()
     {
         //
+        Schema::drop('order_details');
     }
 }

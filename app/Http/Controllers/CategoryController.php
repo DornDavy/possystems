@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class SoftDrinkController extends Controller
+class CategoryController extends Controller
 {
     //
 }

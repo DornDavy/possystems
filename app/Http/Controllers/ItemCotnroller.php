@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class FoodController extends Controller
+class ItemCotnroller extends Controller
 {
     //
 }

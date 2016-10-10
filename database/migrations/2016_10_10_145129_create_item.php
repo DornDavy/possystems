@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSupplyer extends Migration
+class CreateItem extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateSupplyer extends Migration
     public function up()
     {
         //
-        Schema::create('supplyers', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('items', function (Blueprint $table) {
+            $table->integer('id');
             $table->string('name');
-            $table->string('sex');
-            $table->string('deport');
-            $table->string('tel');
-            $table->string('email');
-            $table->string('address');
+            $table->string('size');
+            $table->string('price');
+            $table->string('qty');
+            $table->string('expire');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateSupplyer extends Migration
     public function down()
     {
         //
-        Schema::drop('supplyers');
+        Schema::drop('items');
     }
 }

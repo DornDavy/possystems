@@ -13,6 +13,13 @@ class CreateTaable extends Migration
     public function up()
     {
         //
+        Schema::create('tables', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('status');
+            $table->integer('temp_order_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,5 +30,6 @@ class CreateTaable extends Migration
     public function down()
     {
         //
+        Schema::drop('tables');
     }
 }
